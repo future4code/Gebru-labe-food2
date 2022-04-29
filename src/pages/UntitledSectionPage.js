@@ -7,7 +7,7 @@ export const UntitledSectionPage = () => {
 
     return (
         <>
-        <h1>Página de Erro</h1>
+        <h1>Houve um Erro</h1>
         <button onClick={() => goToHomePage(navigate)}>Home Page</button>
         </>
     )
