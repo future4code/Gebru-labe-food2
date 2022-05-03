@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { BuscaPage } from '../pages/BuscaPage'
-import { CadastroEnderecoPage }  from '../pages/CadastroEnderecoPage'
+import { CadastroEnderecoPage }  from '../pages/CadastroEnderecoPage/CadastroEnderecoPage'
 import { EditarCadastroEnderecoPage } from '../pages/EditarCadastroEnderecoPage'
 import { HomePage } from '../pages/HomePage'
 import { LoginPage } from '../pages/LoginPage'
