@@ -37,3 +37,7 @@ export const goToSignUpPage = (navigate) => {
 export const goToUntitledSectionPage = (navigate) => {
     navigate('/Erro')
 };
+
+export const goBack = (navigate) => {
+    navigate(-1)
+}
