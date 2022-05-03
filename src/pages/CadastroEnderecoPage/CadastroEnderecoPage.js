@@ -16,7 +16,7 @@ export const CadastroEnderecoPage = () => {
 
     const navigate = useNavigate()
 
-    const [form, onChange, clear] = useForm({ street: "", number: "", complement: "", neighbourhood: "", city: "", state: "" })
+    const [form, onChange] = useForm({ street: "", number: "", complement: "", neighbourhood: "", city: "", state: "" })
 
     const onSubmitForm = (event) => {
         event.preventDefault()
@@ -29,7 +29,6 @@ export const CadastroEnderecoPage = () => {
         .then((res) => {
             localStorage.setItem('token', res.data.token)
             alert('Endereço atualizado!')
-            clear()
             goBack(navigate)
         })
         .catch()
