@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { goBack } from '../../routes/Coordinator'
-import useForm from '../../hooks/useForm'
+import { useForm } from '../../hooks/useForm'
 import TextField from '@mui/material/TextField';
 import { useProtectedPage } from '../../hooks/useProtectedPage'
 import { InputContainer, GlobalStyle, ImgBack, TelaCadEndContainer, Title } from './styled';
