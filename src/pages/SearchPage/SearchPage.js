@@ -1,14 +1,10 @@
 import React, {useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { goToHomePage } from '../routes/Coordinator'
-import SearchInput from '../components/SearchInput'
-import axios from 'axios'
-import { BASE_URL } from '../constants/Url'
-import { UntitledSectionPage } from './UntitledSectionPage'
-import GlobalState from '../global/GlobalState'
-import GlobalStateContext from '../global/GlobalStateContext'
+import { goToHomePage } from '../../routes/Coordinator'
+import SearchInput from '../../components/SearchInput'
+import {GlobalStateContext} from '../../global/GlobalStateContext'
 
-export const BuscaPage = () => {
+export const SearchPage = () => {
     const navigate = useNavigate()
     const [text, setText] = useState("")
     const  getRestaurants  = useContext(GlobalStateContext)

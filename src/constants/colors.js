@@ -1,2 +1,4 @@
-export const primaryColor = "#F27649"
-export const neutralColor = "#474749"
+export const lipstick = "#E86E5A" // Lipstick
+export const greyish = "#b8b8b8" // Greyish
+export const black = "000000" // Black
+export const barMain = "#fff";

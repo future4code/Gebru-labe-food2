@@ -1,24 +1,26 @@
-import React, {useCallback, useContext, useState} from "react";
-import { ApiBase } from "../constants/ApiBase";
-import GlobalStateContext from "./GlobalStateContext"
+import { GlobalStateContext } from "./GlobalStateContext";
+import React, { useState } from "react";
+import useRequestData from "../hooks/useRequestData";
+import {BASE_URL} from "../constants/urls"
 
+const GlobalState = (props) => {
+  const [restaurants, getRestaurants, isLoading, error] = useRequestData(
+    [],
+    `${BASE_URL}/restaurants`
+  );
 
+  const data = {
+    restaurants,
+    getRestaurants,
+    isLoading,
+    error
+  };
 
-const GlobalState = (props) =>{
+  return (
+    <GlobalStateContext.Provider value={data}>
+      {props.children}
+    </GlobalStateContext.Provider>
+  );
+};
 
-    const getRestaurants = useCallback(async () => {
-        const res = await ApiBase.get("/restaurants");
-
-        return res.data.restaurants;
-    })
-
-    return (
-        <GlobalStateContext.Provider value={{
-            getRestaurants
-            }}>
-            {props.children}
-        </GlobalStateContext.Provider>
-    )
-}
-
-export default GlobalState
+export default GlobalState;

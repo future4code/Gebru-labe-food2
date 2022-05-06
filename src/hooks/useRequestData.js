@@ -1,25 +1,37 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const useRequestData = (initialData, url) => {
-  const [data, setData] = useState(initialData)
+  const token = localStorage.getItem("token");
+
+  const [data, setData] = useState(initialData);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get(url , {
+    getData(url);
+  }, [url, token]);
+
+  const getData = async (url) => {
+    setIsLoading(true);
+
+    const config = {
       headers: {
-        Authorization: localStorage.getItem('token')
-      }
-    })
-      .then((response) => {
-        setData(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-        alert('Ocorreu um erro, tente novamente')
-      })
-  }, [url])
+        auth: token,
+      },
+    };
 
-  return (data)
-}
+    try {
+      const response = await axios.get(url, config);
+      setData(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      setError(error.response);
+      setIsLoading(false);
+    }
+  };
 
-export default useRequestData
+  return [data, getData, isLoading, error];
+};
+
+export default useRequestData;

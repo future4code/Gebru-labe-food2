@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { goBack } from '../../routes/Coordinator'
 import { useForm } from '../../hooks/useForm'
 import TextField from '@mui/material/TextField';
-import { useProtectedPage } from '../../hooks/useProtectedPage'
+import  useProtectedPage from '../../hooks/useProtectedPage'
 import { InputContainer, GlobalStyle, ImgBack, TelaCadEndContainer, Title } from './styled';
 import back from '../../img/back.png'
 import axios from 'axios';
 import { BASE_URL } from '../../constants/urls';
  
 
-export const CadastroEnderecoPage = () => {
+export const AdressPage = () => {
 
     useProtectedPage()
 
@@ -39,7 +39,7 @@ export const CadastroEnderecoPage = () => {
         <GlobalStyle />
         <form onSubmit={onSubmitForm} >
         <ImgBack>
-        <img src={back} onClick={() => goBack(navigate)}/>
+        <img src={back} alt= " " onClick={() => goBack(navigate)}/>
         </ImgBack>
         <Title>Meu endereço</Title>
         <InputContainer>
