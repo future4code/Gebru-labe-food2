@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { goToCadastroEnderecoPage, goToHomePage, goToSignUpPage } from '../routes/Coordinator'
+import { goToCadastroEnderecoPage, goToHomePage, goToSignUpPage, goToUntitledSectionPage } from '../routes/Coordinator'
 import logoRappi4 from '../images/logo-future-eats-invert@2x.png'
 import SplashRappi4 from '../images/SplashScreen.png'
 import senhaOn from '../images/senhaOn.png'
@@ -132,7 +132,6 @@ export const LoginPage = () => {
     const [password, setPassword] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
-    const [hasAdresss, setHasAdresss] = useState(undefined)
     const [noUser, setNoUser] = useState(false)
 
     const onChangeInputLogin = (event) => {
@@ -166,8 +165,7 @@ export const LoginPage = () => {
             .then((res) => {
                 localStorage.setItem("token", res.data.token)
                 setIsLoading(false)
-                setHasAdresss(res.data.user.hasAdresss)
-                if (hasAdresss === true) {
+                if(res.data.user.hasAddress === true) {
                   goToHomePage(navigate)
                 } else {
                   goToCadastroEnderecoPage(navigate)
@@ -177,7 +175,6 @@ export const LoginPage = () => {
                 setIsLoading(false)
                 setNoUser(true)
             })
-          
     }
 
     return (
