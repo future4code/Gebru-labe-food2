@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { goToHomePage } from '../routes/Coordinator'
 import { goToEditarCadastroEnderecoPage } from '../routes/Coordinator'
 
+
 export const MeuPerfilPage = () => {
     const navigate = useNavigate()
 
