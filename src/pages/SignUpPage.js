@@ -159,7 +159,7 @@ export const SignUpPage = () => {
         })
         .catch((err) => {
             setIsLoading(false)
-            alert(err.res);
+            console(err.res.message);
         })
     
         cleanfields()
