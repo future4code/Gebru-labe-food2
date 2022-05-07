@@ -1,7 +1,7 @@
 import { GlobalStateContext } from "./GlobalStateContext";
 import React, { useState } from "react";
 import useRequestData from "../hooks/useRequestData";
-import {BASE_URL} from "../constants/Urls"
+import {BASE_URL} from "../constants/urls"
 
 const GlobalState = (props) => {
   const [restaurants, getRestaurants, isLoading, error] = useRequestData(

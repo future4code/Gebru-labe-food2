@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@mui/material";
-import theme from "./constants/Theme";
+import theme from "./constants/theme";
 import GlobalState from "./global/GlobalState";
 import Router from "./routes/Router";
 import { GlobalStyle } from "./globalStyles";
