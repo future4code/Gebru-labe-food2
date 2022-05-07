@@ -1,17 +1,17 @@
 import { useLayoutEffect } from "react"
 import { useNavigate } from "react-router-dom";
-import { goToLoginPage } from "../routes/Coordinator"
+import { goToAdminHomePage } from "../routes/coordinator"
 
-const useProtectedPage = () => {
+const useUnprotectedPage = () => {
     const navigate = useNavigate()
 
     useLayoutEffect(() => {
         const token = localStorage.getItem("token")
-        if (!token) {
-            goToLoginPage(navigate)
+        if (token) {
+            goToAdminHomePage(navigate)
         }
     }, [navigate])
 
 }
 
-export default useProtectedPage
+export default useUnprotectedPage
