@@ -1,11 +1,18 @@
-import React from 'react';
-import Routes from './routes/Routes';
+import { ThemeProvider } from "@mui/material";
+import theme from "./constants/Theme";
+import GlobalState from "./global/GlobalState";
+import Router from "./routes/Router";
+import { GlobalStyle } from "./globalStyles";
+import React from 'react'
 
 function App() {
   return (
-    <>
-      <Routes />
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalState>
+        <GlobalStyle />
+          <Router />
+      </GlobalState>
+    </ThemeProvider>
   );
 }
 

@@ -1,42 +1,46 @@
-export const goToBuscaPage = (navigate) => {
-    navigate('/Busca')
-};
+export const goToLoginPage = (navigate) => {
+    navigate("/login")
+}
 
-export const goToCadastroEnderecoPage = (navigate) => {
-    navigate('/CadastroEndereco')
-};
+export const goToSingUpPage = (navigate) => {
+    navigate("/cadastro")
+}
 
-export const goToEditarCadastroEnderecoPage = (navigate) => {
-    navigate('/EditarCadastroEndereco')
-};
+export const goToAdressPage = (navigate) => {
+    navigate("/endereco")
+}
 
 export const goToHomePage = (navigate) => {
-    navigate('/')
-};
+    navigate("/pagina-inicial")
+}
 
-export const goToLoginPage = (navigate) => {
-    navigate('/Login')
-};
+export const goRestaurantPage = (navigate, id) => {
+    navigate(`/restaurante/${id}`)
+}
 
-export const goToMeuCarrinhoPage = (navigate) => {
-    navigate('/MeuCarrinho')
-};
+export const goToCartPage = (navigate) => {
+    navigate("/carrinho")
+}
 
-export const goToMeuPerfilPage = (navigate) => {
-    navigate('/MeuPerfil')
-};
+export const goToProfilePage = (navigate) => {
+    navigate("/perfil")
+}
 
-export const goToResultadoPage = (navigate) => {
-    navigate('/Resultado')
-};
+export const goToEditProfilePage = (navigate) => {
+    navigate("/perfil/editar")
+}
 
-export const goToSignUpPage = (navigate) => {
-    navigate('/SignUp')
-};
+export const goToEditAdressPage = (navigate) => {
+    navigate("/perfil/editar-endereco")
+}
 
-export const goToUntitledSectionPage = (navigate) => {
-    navigate('/Erro')
-};
+export const goToErrorPage = (navigate) => {
+    navigate("/erro")
+}
+
+export const goToSearch = (navigate) => {
+    navigate("/buscar")
+}
 
 export const goBack = (navigate) => {
     navigate(-1)
