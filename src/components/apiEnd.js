@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext } from "react";
-import { BASE_URL } from "../constants/Urls";
+import { BASE_URL } from "../constants/urls";
 import { GlobalStateContext } from "../global/GlobalStateContext";
 
 //dataUp is a function to take date back to who called.

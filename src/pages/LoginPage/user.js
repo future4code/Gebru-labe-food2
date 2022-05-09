@@ -1,5 +1,5 @@
 import axios from "axios"
-import { BASE_URL } from '../../constants/Urls'
+import { BASE_URL } from '../../constants/urls'
 import {goToHomePage} from '../../routes/Coordinator'
 
 

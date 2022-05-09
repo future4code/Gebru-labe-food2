@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { greyish, lipstick, barMain, black } from "./Colors";
+import { greyish, lipstick, barMain, black } from "./colors";
 
 const theme = createTheme({
   palette: {

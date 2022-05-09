@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../../constants/Urls";
+import { BASE_URL } from "../../constants/urls";
 import { Button, FormHelperText, TextField, Typography } from "@mui/material";
 import logo2 from "../../assets/logo2.svg";
 import {useForm} from "../../hooks/useForm";
