@@ -17,24 +17,22 @@ export const LogoWrapper = styled.div`
 `
 
 export const InputWrapper = styled.input`
-      width: 100%;
+      width: 70vw;
     height: 30px;
-    border-radius: 10px;
+    border: solid 1px #b8b8b8;
     padding: 4px 8px;
     border-width: 1px;
     border-color: gray;
     margin: 0 0 15px 0;
 `
 export const ButtonWrapper = styled.button`
-   margin-bottom: 15px;
-    height: 40px;
-    padding: 0 20px;
-    border-radius: 20px;
-    border: none;
-    color: white;
-    font-size: 16px;
-    background-color: slategray;
-    min-width: 100px;
+   width: 65%;
+  height: 42px;
+  padding: 12px 16px;
+  border-radius: 2px;
+  border: none;
+  font-size:18px;
+  background-color:#E86E5A;
 
     &:hover{
       cursor: pointer;
@@ -71,3 +69,16 @@ export const Form = styled.form`
     width: 500px;
 
 `
+// export const TextStyle = styled.h1`
+// width: 296px;
+//   height: 18px;
+//   font-family:Georgia, 'Times New Roman', Times, serif;
+//   font-size: 16px;
+//   font-weight: normal;
+//   font-stretch: normal;
+//   font-style: normal;
+//   line-height: normal;
+//   letter-spacing: -0.39px;
+//   text-align: center;
+//   color: #000;
+// `

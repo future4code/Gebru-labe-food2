@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import {goToSingUpPage} from '../../routes/Coordinator'
 import * as S from './LoginStyle';
 import {login } from '../../pages/LoginPage/user'
-import {ButtonsContainer, Form, InputWrapper,ButtonWrapper} from './LoginStyle'
+import {ButtonsContainer, Form, InputWrapper,ButtonWrapper, TextStyle} from './LoginStyle'
+import { TextField, Typography } from "@mui/material";
 
 export const LoginPage = () => {
     useUnprotectedPage()
@@ -32,9 +33,14 @@ export const LoginPage = () => {
       
    
 
-            <h1>Login</h1>
+            <Typography>Login</Typography>
             <Form onSubmit={onClickLogin}>
-                <InputWrapper
+                <TextField
+                    sx={{
+                        width: 320,
+                        margin: 2
+                      }}
+                    label={"E-mail"}
                     placeholder={"E-mail"}
                     type={"email"}
                     name={"email"}
@@ -42,7 +48,12 @@ export const LoginPage = () => {
                     onChange={onChange}
                     required
                 />
-                <InputWrapper
+                <TextField
+                    sx={{
+                        width: 320,
+                        margin: 2
+                      }}
+                    label={"Senha"}
                     placeholder={"Senha"}
                     type={"password"}
                     name={"password"}
@@ -58,7 +69,7 @@ export const LoginPage = () => {
 
 
         <S.Text>
-          <span>Não possui cadastro? <span onClick={() =>goToSingUpPage(navigate)}>Clique aqui</span></span>
+          <Typography>Não possui cadastro? <span onClick={() =>goToSingUpPage(navigate)}>Clique aqui</span></Typography>
          </S.Text>
 
         </S.PageWrap >
