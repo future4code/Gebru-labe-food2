@@ -1,10 +1,10 @@
 import { createTheme } from "@mui/material";
-import { greyish, lipstick, barMain, black } from "./colors";
+import { greyish, darkpeach, barMain, black } from "./colors";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: lipstick,
+      main: darkpeach,
       contrastText: black,
     },
     secondary: {
@@ -19,7 +19,7 @@ const theme = createTheme({
       contrastText: barMain,
     },
     success: {
-      main: lipstick,
+      main: darkpeach,
     },
   },
   components: {
