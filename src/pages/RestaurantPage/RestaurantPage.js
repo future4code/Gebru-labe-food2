@@ -1,10 +1,30 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
+import Back from '../../img/back.png'
+import CardFood from "../../components/CardFood/CardFood"
+import { goToHomePage } from "../../routes/Coordinator"
+import CardRestaurant from "../../components/CardRestaurant/CardRestaurant"
+import { Container, BackImg, ContainerFoods, PageTittleContainer, TittleNavContainer } from './RestaurantStyle'
+
 
 export const RestaurantPage = () => {
-    return (
-        <div>
-            <p>RestaurantPage</p>
-        </div>
-    )
-};
+  const navigate = useNavigate();
+
+  return (
+    <Container>
+
+      <PageTittleContainer>
+        <TittleNavContainer>
+        <BackImg src={Back} onClick={() => goToHomePage(navigate)}/>
+        <p>Restaurante</p>
+        </TittleNavContainer>
+      </PageTittleContainer>
+
+      <CardRestaurant />
+      <ContainerFoods>
+        <CardFood />
+      </ContainerFoods>
+    </Container>
+  )
+}
 
