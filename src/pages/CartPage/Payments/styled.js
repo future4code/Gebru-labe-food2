@@ -28,14 +28,14 @@ export const ButtonStyle = styled.button`
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: 550;
-    background-color: #5cb646;
+    background-color: rgba(232, 110, 90, 0.5);
     border: none;
     border-radius: 4px;
     height: 42px;
     width: 90%;
     align-items: center;
 :hover{
-    background-color: #A2E884;
+    background-color: #e86e5a;
 }
 `
 export const FormPayment = styled(FormGroup)`

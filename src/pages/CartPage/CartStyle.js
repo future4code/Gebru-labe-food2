@@ -103,7 +103,7 @@ export const ContainerCart = styled.div`
 }
 `
 export const PriceStyle = styled.p`
-    color: #5cb646;
+    color: #e86e5a;
     font-weight: 600;
 `
 export const PageTittleContainer = styled.div`

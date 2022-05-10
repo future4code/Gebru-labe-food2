@@ -12,8 +12,6 @@ export const CartPage = () => {
   const profile = useRequestData([], `${BASE_URL}/profile`)
   const [restaurant] = useRequestData([], `${BASE_URL}/restaurants/${cartRest}`)
 
-
-
   const valueAll = () => {
     let valueAllCart = 0
     for (let valueCart of cart) {

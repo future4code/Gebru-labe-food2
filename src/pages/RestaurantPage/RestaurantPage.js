@@ -5,12 +5,13 @@ import CardFood from "../../components/CardFood/CardFood"
 import { goToHomePage } from "../../routes/Coordinator"
 import CardRestaurant from "../../components/CardRestaurant/CardRestaurant"
 import { Container, BackImg, ContainerFoods, PageTittleContainer, TittleNavContainer } from './RestaurantStyle'
-
+import Navigation from "../../components/Navigation/Navigation";
 
 export const RestaurantPage = () => {
   const navigate = useNavigate();
 
   return (
+    <>
     <Container>
 
       <PageTittleContainer>
@@ -25,6 +26,10 @@ export const RestaurantPage = () => {
         <CardFood />
       </ContainerFoods>
     </Container>
+
+<Navigation screen={0} />
+
+</>
   )
 }
 

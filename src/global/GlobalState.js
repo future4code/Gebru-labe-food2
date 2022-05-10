@@ -4,23 +4,39 @@ import useRequestData from "../hooks/useRequestData";
 import {BASE_URL} from "../constants/urls"
 
 const GlobalState = (props) => {
-  const [restaurants, getRestaurants, isLoading, error] = useRequestData(
-    [],
-    `${BASE_URL}/restaurants`
-  );
+  const [restaurants,  getRestaurants, setRestaurants, loading, error] = useRequestData(
+    [],`${BASE_URL}/restaurants`);
+  const [cart, setCart] = useState([])
+  const [cartRest, setCartRest] = useState([])
+  const [buttonCard, setButtonCard] = useState()
+
+
+  const removeTheFood = (food) => {
+      const filterFood = cart.filter((f)=> f.id !== food.id)
+      setCart(filterFood)
+  }
+
 
   const data = {
-    restaurants,
-    getRestaurants,
-    isLoading,
-    error
-  };
-
-  return (
-    <GlobalStateContext.Provider value={data}>
+      cart,
+      setCart,
+      restaurants,
+      getRestaurants,
+      setRestaurants,
+      loading,
+      removeTheFood,
+      cartRest,
+      setCartRest,
+      buttonCard,
+      setButtonCard,
+      error
+  }
+  
+  return(
+      <GlobalStateContext.Provider value={ data }>
       {props.children}
-    </GlobalStateContext.Provider>
-  );
-};
+      </GlobalStateContext.Provider>
+  )
+}
 
 export default GlobalState;
