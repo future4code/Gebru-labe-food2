@@ -30,7 +30,7 @@ export const goToEditProfilePage = (navigate) => {
     navigate("/perfil/editar")
 }
 
-export const goToEditAdressPage = (navigate) => {
+export const goToEditAddressPage = (navigate) => {
     navigate("/perfil/editar-endereco")
 }
 
