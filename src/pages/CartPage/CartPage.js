@@ -11,13 +11,15 @@ export const CartPage = () => {
   const { cart, setCart, removeTheFood, cartRest } = useContext(GlobalStateContext)
   const profile = useRequestData([], `${BASE_URL}/profile`)
   const [restaurant] = useRequestData([], `${BASE_URL}/restaurants/${cartRest}`)
+console.log(restaurant)
+
 
   const valueAll = () => {
     let valueAllCart = 0
     for (let valueCart of cart) {
-      valueAllCart += valueCart.price * valueCart.quantity;
+      valueAllCart = valueCart.price * valueCart.quantity;
     }
-    return valueAllCart + restaurant?.restaurant?.shipping
+    return valueAllCart
 
   }
 
