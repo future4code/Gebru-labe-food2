@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, TextField, Typography } from "@mui/material";
-import { StyledForm } from "../../components/Adress/AdressStyle";
+import { StyledForm} from "../../components/Adress/AdressStyle";
 import { useForm } from "../../hooks/useForm";
-import Header from "../../components/Header/Header";
-import SubHeader from "../../components/Header/SubHeader";
+import { PageTittleContainer, TittleNavContainer, BackImg} from "./EditAdressStyle";
+import { goToProfilePage } from "../../routes/Coordinator";
+import Back from '../../img/back.png'
+
+
 
 
 
@@ -23,10 +26,17 @@ export const EditAdressPage = () => {
       });
     
     return (
-       
+      
     <form>
-    <h3>Editar Endereço</h3>
+      <PageTittleContainer>
+        <TittleNavContainer>
+        <BackImg src={Back} onClick={() => goToProfilePage(navigate)}/>
+          <p>Editar Endereço</p>
+        </TittleNavContainer>
+      </PageTittleContainer>
+     
       <StyledForm>
+
         <TextField
           required
           name="street"
