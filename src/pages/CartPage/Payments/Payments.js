@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 import { BASE_URL } from "../../../constants/urls";
+
 import { goToHomePage } from "../../../routes/Coordinator";
 import { ContainerForm, ButtonStyle, FormPayment, PaymentTitle, ButtonS} from "./styled"
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye'
@@ -13,6 +14,22 @@ const Payments = ({ cart, resId, }) => {
     const [money, setMoney] = useState(false)
     const [creditCard, setCreditCard] = useState(false)
     const [payments, setPayments] = useState([])
+
+    const confirmPurchase = (resId, body, navigate) => {
+        const token = window.localStorage.getItem(`token`)
+        const restId = window.localStorage.getItem(`resId`)
+        const axiosConfig = { headers: { auth: token } }
+      
+        axios.post(`${BASE_URL}/restaurants/${restId}/order`, body, axiosConfig)
+          .then((res) => {
+            alert("O pedido foi enviado!")
+            goToHomePage(navigate)
+          })
+          .catch((error) => {
+              console.log(error)
+            alert(error.message)
+          })
+      }
 
     const onClickMoney = () => {
         setCreditCard(false)
@@ -37,23 +54,10 @@ const Payments = ({ cart, resId, }) => {
         paymentMethod: payments
     }
 
-    const confirmPurchase = (resId, body, navigate) => {
-        const token = window.localStorage.getItem(`token`)
-        const axiosConfig = { headers: { auth: token } }
-      
-        axios.post(`${BASE_URL}/restaurants/${resId}/order`, body, axiosConfig)
-          .then((res) => {
-            alert("success", "O pedido foi enviado!")
-            goToHomePage(navigate)
-          })
-          .catch((error) => {
-            alert("error", error.response.data.message)
-          })
-      }
-
     const confirmBuy = () => {
         confirmPurchase(resId, body, navigate)
     }
+
 
     return (
         <ContainerForm>
