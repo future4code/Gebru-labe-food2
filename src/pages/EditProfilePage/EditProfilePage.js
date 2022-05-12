@@ -1,30 +1,56 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
+import axios from "axios";
+import {GlobalStateContext} from "../../global/GlobalStateContext";
 import { Button, FormHelperText, TextField, Typography } from "@mui/material";
-import {useForm} from "../../hooks/useForm";
+import { PageTittleContainer, TittleNavContainer, BackImg } from "./EditProfileStyle"
+import {useForm, reset} from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
-
-
-
-
+import { goToProfilePage } from "../../routes/Coordinator";
+import Back from '../../img/back.png'
+import { BASE_URL } from "../../constants/urls";
 
 
 export const EditProfilePage = () => {
+  
+  const { setFullAddress, fullAddress } = useContext(GlobalStateContext);
     
-    const navigate = useNavigate();
+  const navigate = useNavigate();
     
-    
+    useEffect(() => {
+      setFullAddress(fullAddress);
+      putProfile();
+    }, [fullAddress, setFullAddress]);
 
-    const { form, onChange, clear } = useForm({
+    const { form, onChange, clear, reset } = useForm({
         name: "",
         email: "",
         cpf: "",
       });
     
-
-    
+      const putProfile = () => {
+        axios
+          .put(`${BASE_URL}/profile`, {
+            headers: {
+              auth: window.localStorage.getItem("token"),
+            },
+          })
+          .then((res) => {
+            putProfile(res.data.user);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
+   
     return (
         <form>
-            <h3>Editar Perfil</h3>
+          <PageTittleContainer>
+        <TittleNavContainer>
+        <BackImg src={Back} onClick={() => goToProfilePage(navigate)}/>
+          <p>Editar Perfil</p>
+        </TittleNavContainer>
+      </PageTittleContainer>
+            
         <TextField
           id="outlined-required"
           name={"name"}
