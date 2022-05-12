@@ -31,7 +31,7 @@ export const ProfilePage = () => {
 
   const getProfile = () => {
     axios
-      .get(`${BASE_URL}profile`, {
+      .get(`${BASE_URL}/profile`, {
         headers: {
           auth: window.localStorage.getItem("token"),
         },
@@ -49,6 +49,7 @@ export const ProfilePage = () => {
   return (
     <ContainerProfile>
       <ProfileDiv>
+        <h3>Meu Perfil</h3>
         <div>
           <p>{profile.name}</p>
           <p>{profile.email}</p>
