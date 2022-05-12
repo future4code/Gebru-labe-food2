@@ -19,6 +19,7 @@ const CardRestaurant = () => {
         })
         .map((rest) => {
             localStorage.setItem("frete", Number(rest.shipping))
+            localStorage.setItem("resId",rest.id)
             return (
                 <ContainerCard key={rest.id}>
                     <Card sx={{display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: 3, border: 1, borderColor: '#c4c4c4', width: 350}}>
