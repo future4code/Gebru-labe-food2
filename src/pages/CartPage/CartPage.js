@@ -68,12 +68,12 @@ console.log(restaurant)
 
           <div className="frete">
             <p>Frete R$</p>
-            {cart.length === 0 ? <p>0,00</p> : <p>{restaurant?.restaurant?.shipping}</p>}
+            {cart.length === 0 ? <p>0,00</p> : <p>{localStorage.getItem("frete")}</p>}
           </div>
 
           <div className="priceAll">
             <h4>SUBTOTAL </h4>
-            {cart.length === 0 ? <PriceStyle>R$0,00</PriceStyle> : <PriceStyle>R${valueAll()}</PriceStyle>}
+            {cart.length === 0 ? <PriceStyle>R$0,00</PriceStyle> : <PriceStyle>R${Number(valueAll()) + Number(localStorage.getItem("frete"))}</PriceStyle>}
           </div>
 
           <div className="paymentsButton">
