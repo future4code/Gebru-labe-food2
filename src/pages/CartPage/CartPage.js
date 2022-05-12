@@ -11,13 +11,15 @@ export const CartPage = () => {
   const { cart, setCart, removeTheFood, cartRest } = useContext(GlobalStateContext)
   const profile = useRequestData([], `${BASE_URL}/profile`)
   const [restaurant] = useRequestData([], `${BASE_URL}/restaurants/${cartRest}`)
+console.log(restaurant)
+
 
   const valueAll = () => {
     let valueAllCart = 0
     for (let valueCart of cart) {
-      valueAllCart += valueCart.price * valueCart.quantity;
+      valueAllCart = valueCart.price * valueCart.quantity;
     }
-    return valueAllCart + restaurant?.restaurant?.shipping
+    return valueAllCart
 
   }
 
@@ -66,12 +68,12 @@ export const CartPage = () => {
 
           <div className="frete">
             <p>Frete R$</p>
-            {cart.length === 0 ? <p>0,00</p> : <p>{restaurant?.restaurant?.shipping}</p>}
+            {cart.length === 0 ? <p>0,00</p> : <p>{localStorage.getItem("frete")}</p>}
           </div>
 
           <div className="priceAll">
             <h4>SUBTOTAL </h4>
-            {cart.length === 0 ? <PriceStyle>R$0,00</PriceStyle> : <PriceStyle>R${valueAll()}</PriceStyle>}
+            {cart.length === 0 ? <PriceStyle>R$0,00</PriceStyle> : <PriceStyle>R${Number(valueAll()) + Number(localStorage.getItem("frete"))}</PriceStyle>}
           </div>
 
           <div className="paymentsButton">
