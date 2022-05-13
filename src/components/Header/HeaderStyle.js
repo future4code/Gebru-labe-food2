@@ -18,12 +18,13 @@ export const StyledToolbar = styled.div`
 `;
 
 export const StyledTitle = styled.div`
-  height: 4rem;
-  display: flex;
-  padding-left: 1rem;
+   display: flex; 
   justify-content: center;
-  align-items: center;
-  /* width: 58%;  */
+  align-items: center; 
+  margin: 0 auto;
+  width: 360px;
+  height: 64px;
+  font-size:18px;
 `;
 export const StyledSubBox = styled.div`
   margin-top: 1.75rem;
