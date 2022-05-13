@@ -117,7 +117,7 @@ import {
           <></>
         )}
         {!isLoading && isSearch && !inputValue && (
-          <p>Busque por nomes de restaurantes</p>
+          <Typography>Busque por nomes de restaurantes</Typography>
         )}
         {!isLoading && !isSearch && (
           <FilterContainer>

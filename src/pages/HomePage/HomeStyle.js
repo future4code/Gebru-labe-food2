@@ -21,7 +21,11 @@ export const SearchIconStyled = styled(SearchIcon)`
 `
 
 export const TextFieldStyled = styled(TextField)`
-    width: 85vw;
+  width: 328px;
+  height: 56px;
+  padding: 16px 8px 16px 17px;
+  border-radius: 2px;
+  border: solid 1px #b8b8b8;
 `
 
 export const Search = styled.div`

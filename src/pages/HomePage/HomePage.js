@@ -16,6 +16,7 @@ export const HomePage = () => {
     return (
         <div>
             <Header title="Rappi4" goBack={true} />
+            
 
             <MainStyle>
 
