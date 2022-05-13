@@ -1,13 +1,14 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import axios from "axios";
 import {GlobalStateContext} from "../../global/GlobalStateContext";
 import { Button, FormHelperText, TextField, Typography } from "@mui/material";
-import { PageTittleContainer, TittleNavContainer, BackImg } from "./EditProfileStyle"
+import { PageTittleContainer, TittleNavContainer, BackImg, GlobalStyle, FormContainer} from "./EditProfileStyle"
 import {useForm, reset} from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { goToProfilePage } from "../../routes/Coordinator";
 import Back from '../../img/back.png'
 import { BASE_URL } from "../../constants/urls";
+import useRequestData from "../../hooks/useRequestData";
 
 
 export const EditProfilePage = () => {
@@ -15,6 +16,8 @@ export const EditProfilePage = () => {
   const { setFullAddress, fullAddress } = useContext(GlobalStateContext);
     
   const navigate = useNavigate();
+
+  const [ user, setUser ] = useState({})
     
     useEffect(() => {
       setFullAddress(fullAddress);
@@ -26,6 +29,8 @@ export const EditProfilePage = () => {
         email: "",
         cpf: "",
       });
+
+      const usersRequest = useRequestData([], `${BASE_URL}/profile`)
     
       const putProfile = () => {
         axios
@@ -44,13 +49,14 @@ export const EditProfilePage = () => {
    
     return (
         <form>
-          <PageTittleContainer>
-        <TittleNavContainer>
-        <BackImg src={Back} onClick={() => goToProfilePage(navigate)}/>
-          <p>Editar Perfil</p>
-        </TittleNavContainer>
-      </PageTittleContainer>
-            
+          <GlobalStyle />
+            <PageTittleContainer>
+              <TittleNavContainer>
+                <BackImg src={Back} onClick={() => goToProfilePage(navigate)}/>
+                  <p>Editar Perfil</p>
+              </TittleNavContainer>
+            </PageTittleContainer>
+       <FormContainer>
         <TextField
           id="outlined-required"
           name={"name"}
@@ -97,6 +103,7 @@ export const EditProfilePage = () => {
         >
           Salvar
         </Button>
+        </FormContainer>
       </form>
         
     )
