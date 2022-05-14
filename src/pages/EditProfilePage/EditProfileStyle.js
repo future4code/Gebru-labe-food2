@@ -1,4 +1,17 @@
 import styled from "styled-components";
+import { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`
+export const FormContainer = styled.div`
+    display: grid;
+    align-items: center;
+    margin: 70px 10px;
+`
 
 export const PageTittleContainer = styled.form`
     position: fixed;
@@ -15,6 +28,7 @@ export const TittleNavContainer = styled.form`
     font-family: 'Roboto', sans-serif;
     font-weight: 550;
     margin-top: 20px;
+    margin-bottom: 15px;
     width: 360px;
     display: flex;
     text-align: center;
