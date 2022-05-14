@@ -54,10 +54,10 @@ wonderful-banana.surge.sh
 # Tecnologias utilizadas
 O projeto foi desenvolvido usando as seguintes tecnologias:
 
-React.js
-Styled-Components
-Axios
-Hooks
+- React.js
+- Styled-Components
+- Axios
+- Hooks
 
 💾 Como baixar o projeto
 Primeiro instale o Git, Node.jS + npm
