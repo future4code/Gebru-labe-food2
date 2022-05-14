@@ -1,5 +1,3 @@
- image.png
-
 # Projeto Final do módulo de Front-End 
 
 # Rappi4A
