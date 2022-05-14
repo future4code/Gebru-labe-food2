@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/93138077/168407488-d15756f7-c7a9-462f-83cf-c17dc4af45a4.png)
+
+
 # Projeto Final do módulo de Front-End 
 
 # Rappi4A
@@ -61,10 +64,7 @@ Hooks
 💾 Como baixar o projeto
 Primeiro instale o Git, Node.jS + npm
 # Clonar o repositório
-git clone https://github.com/Ale557333/Astromatch.git
-
-# Entrar no diretório
-cd astromatch
+git clone https://github.com/future4code/Gebru-labe-food2.git
 
 # Instalar as dependências
 npm install
