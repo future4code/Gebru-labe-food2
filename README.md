@@ -1,9 +1,14 @@
-# Projeto Final do módulo de Front-End 
+
+# Projeto Final do módulo de Front-End - Turma Gebru
+
 # Rappi4A
+
+![image](https://user-images.githubusercontent.com/93138077/168407600-ee6489ee-d677-4e82-8d9c-b9baeea14da7.png)
+
 # Link do Surge:
 wonderful-banana.surge.sh
 
-O que funciona:
+# O que funciona:
 - **Fluxo de Login/Cadastro**
     - [ ]  O usuário deve ser capaz de criar uma conta, cadastrando seus dados pessoais e seu endereço
     - [ ]  Caso insira alguma informação incorreta ou deixe de inserir alguma informação obrigatória, o usuário deve receber uma mensagem de erro clara
@@ -30,7 +35,7 @@ O que funciona:
     - [ ]  O usuário deve ser capaz de selecionar uma forma de pagamento dentre as opções de cartão e dinheiro
     - [ ]  O usuário deve ser capaz de concluir um pedido e, ao fazê-lo.
 
-O que não funciona:
+# O que não funciona:
 
 - Exibição do banner de "Pedido em Andamento" com os dados do pedido (esse banner fica ativo durante X minutos, sendo X o tempo de entrega do restaurante)
 
@@ -48,12 +53,12 @@ O que não funciona:
  - Rodrigo Daniel dos Santos Assis
 
 # Tecnologias utilizadas
-o projeto foi desenvolvido usando as seguintes tecnologias:
+O projeto foi desenvolvido usando as seguintes tecnologias:
 
-React.js
-Styled-Components
-Axios
-Hooks
+- React.js
+- Styled-Components
+- Axios
+- Hooks
 
 💾 Como baixar o projeto
 Primeiro instale o Git, Node.jS + npm
