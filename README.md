@@ -67,8 +67,8 @@ Primeiro instale o Git, Node.jS + npm
 git clone https://github.com/future4code/Gebru-labe-food2.git
 
 # Instalar as dependências
-npm install
-npm install @mui/material @emotion/react @emotion/styled
+- npm install
+- npm install @mui/material @emotion/react @emotion/styled
 
 # Rodar o projeto
 npm run start
