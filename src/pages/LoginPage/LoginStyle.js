@@ -26,7 +26,7 @@ export const InputWrapper = styled.input`
     margin: 0 0 15px 0;
 `
 export const ButtonWrapper = styled.button`
-   width: 65%;
+   width: 100%;
   height: 42px;
   padding: 12px 16px;
   border-radius: 2px;
@@ -58,15 +58,16 @@ export const Text = styled.div`
 export const ButtonsContainer = styled.div`
     display: flex;
     justify-content: space-around;
-    width: 500px;
+    width: 320px;
     margin: 10px 0;
+    /* border:solid 1px; */
 `
 
 export const Form = styled.form`
   display: flex;
     flex-direction: column;
     align-items: center;
-    width: 500px;
+    width: 65%;
 
 `
 // export const TextStyle = styled.h1`
